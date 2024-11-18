@@ -13,8 +13,10 @@ import { motion } from 'framer-motion';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formStatus, setFormStatus] = useState<'success' | 'error' | null>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -46,17 +48,17 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <EmailIcon fontSize="large" />,
-      title: 'Email',
+      title: t('contact.info.email'),
       content: 'contact@feifantech.com',
     },
     {
       icon: <PhoneIcon fontSize="large" />,
-      title: 'Phone',
+      title: t('contact.info.phone'),
       content: '+1 (555) 123-4567',
     },
     {
       icon: <LocationOnIcon fontSize="large" />,
-      title: 'Address',
+      title: t('contact.info.address'),
       content: 'Silicon Valley, CA',
     },
   ];
@@ -71,7 +73,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
         >
           <Typography variant="h2" component="h1" gutterBottom textAlign="center">
-            Contact Us
+            {t('contact.title')}
           </Typography>
           <Typography
             variant="h5"
@@ -79,7 +81,7 @@ const Contact = () => {
             color="text.secondary"
             sx={{ mb: 6 }}
           >
-            Get in Touch with Our Team
+            {t('contact.subtitle')}
           </Typography>
         </motion.div>
 
@@ -106,10 +108,10 @@ const Contact = () => {
                   >
                     <Box sx={{ color: 'primary.main' }}>{info.icon}</Box>
                     <Box>
-                      <Typography variant="h6">{info.title}</Typography>
-                      <Typography color="text.secondary">
-                        {info.content}
+                      <Typography variant="h6" gutterBottom>
+                        {info.title}
                       </Typography>
+                      <Typography color="text.secondary">{info.content}</Typography>
                     </Box>
                   </Paper>
                 ))}
@@ -130,7 +132,7 @@ const Contact = () => {
                     <Grid item xs={12} sm={6}>
                       <TextField
                         fullWidth
-                        label="Name"
+                        label={t('contact.form.name')}
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
@@ -140,7 +142,7 @@ const Contact = () => {
                     <Grid item xs={12} sm={6}>
                       <TextField
                         fullWidth
-                        label="Email"
+                        label={t('contact.form.email')}
                         name="email"
                         type="email"
                         value={formData.email}
@@ -151,7 +153,7 @@ const Contact = () => {
                     <Grid item xs={12}>
                       <TextField
                         fullWidth
-                        label="Subject"
+                        label={t('contact.form.subject')}
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
@@ -161,7 +163,7 @@ const Contact = () => {
                     <Grid item xs={12}>
                       <TextField
                         fullWidth
-                        label="Message"
+                        label={t('contact.form.message')}
                         name="message"
                         multiline
                         rows={4}
@@ -174,10 +176,11 @@ const Contact = () => {
                       <Button
                         type="submit"
                         variant="contained"
+                        color="primary"
                         size="large"
                         fullWidth
                       >
-                        Send Message
+                        {t('contact.form.submit')}
                       </Button>
                     </Grid>
                   </Grid>
@@ -185,13 +188,12 @@ const Contact = () => {
 
                 {formStatus === 'success' && (
                   <Alert severity="success" sx={{ mt: 2 }}>
-                    Thank you for your message. We'll get back to you soon!
+                    {t('contact.form.success')}
                   </Alert>
                 )}
-
                 {formStatus === 'error' && (
                   <Alert severity="error" sx={{ mt: 2 }}>
-                    There was an error sending your message. Please try again.
+                    {t('contact.form.error')}
                   </Alert>
                 )}
               </Paper>

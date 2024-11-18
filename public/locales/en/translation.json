@@ -1,0 +1,103 @@
+{
+  "welcome": "Welcome to Feifan Tech",
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "readMore": "Read More",
+    "learnMore": "Learn More"
+  },
+  "home": {
+    "hero": {
+      "title": "Innovation Through Technology",
+      "subtitle": "Building the future with cutting-edge solutions",
+      "cta": "Get Started"
+    },
+    "features": {
+      "title": "Our Features",
+      "innovation": {
+        "title": "Innovation",
+        "description": "Pushing boundaries with cutting-edge technology"
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "Delivering excellence in every project"
+      },
+      "support": {
+        "title": "Support",
+        "description": "24/7 dedicated customer support"
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Our Journey of Innovation",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide innovative technology solutions that empower businesses and individuals to achieve their full potential."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be the leading force in technological advancement and digital transformation."
+    },
+    "values": {
+      "title": "Our Values",
+      "innovation": "Innovation",
+      "integrity": "Integrity",
+      "excellence": "Excellence",
+      "collaboration": "Collaboration"
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "description": "With our proven track record of success and commitment to excellence, we deliver innovative solutions that drive real business value. Our team of experts is dedicated to your success, providing personalized service and cutting-edge technology solutions."
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive Solutions for Your Business",
+    "solutions": {
+      "development": {
+        "title": "Software Development",
+        "description": "Custom software solutions tailored to your needs"
+      },
+      "consulting": {
+        "title": "IT Consulting",
+        "description": "Expert guidance for your technology decisions"
+      },
+      "cloud": {
+        "title": "Cloud Services",
+        "description": "Scalable cloud solutions for modern businesses"
+      },
+      "ai": {
+        "title": "AI Solutions",
+        "description": "Intelligent automation and data analysis"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in Touch",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Business Hours"
+    }
+  }
+}

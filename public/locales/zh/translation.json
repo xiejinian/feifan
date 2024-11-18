@@ -1,0 +1,103 @@
+{
+  "welcome": "欢迎来到飞帆科技",
+  "navigation": {
+    "home": "首页",
+    "about": "关于我们",
+    "services": "服务",
+    "contact": "联系我们"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "发生错误",
+    "submit": "提交",
+    "cancel": "取消",
+    "readMore": "阅读更多",
+    "learnMore": "了解更多"
+  },
+  "home": {
+    "hero": {
+      "title": "科技创新",
+      "subtitle": "用前沿技术构建未来",
+      "cta": "立即开始"
+    },
+    "features": {
+      "title": "我们的特色",
+      "innovation": {
+        "title": "创新",
+        "description": "突破技术边界"
+      },
+      "quality": {
+        "title": "品质",
+        "description": "每个项目都追求卓越"
+      },
+      "support": {
+        "title": "支持",
+        "description": "24/7专业客户支持"
+      }
+    }
+  },
+  "about": {
+    "title": "关于我们",
+    "subtitle": "我们的创新之旅",
+    "mission": {
+      "title": "我们的使命",
+      "description": "提供创新的技术解决方案，帮助企业和个人发挥最大潜能。"
+    },
+    "vision": {
+      "title": "我们的愿景",
+      "description": "成为技术进步和数字化转型的领导力量。"
+    },
+    "values": {
+      "title": "我们的价值观",
+      "innovation": "创新",
+      "integrity": "诚信",
+      "excellence": "卓越",
+      "collaboration": "协作"
+    },
+    "whyChooseUs": {
+      "title": "为什么选择我们",
+      "description": "凭借我们成功的业绩记录和对卓越的承诺，我们提供能带来真正商业价值的创新解决方案。我们的专家团队致力于您的成功，提供个性化服务和前沿技术解决方案。"
+    }
+  },
+  "services": {
+    "title": "我们的服务",
+    "subtitle": "为您的企业提供全面解决方案",
+    "solutions": {
+      "development": {
+        "title": "软件开发",
+        "description": "根据您的需求定制软件解决方案"
+      },
+      "consulting": {
+        "title": "IT咨询",
+        "description": "为您的技术决策提供专业指导"
+      },
+      "cloud": {
+        "title": "云服务",
+        "description": "为现代企业提供可扩展的云解决方案"
+      },
+      "ai": {
+        "title": "AI解决方案",
+        "description": "智能自动化和数据分析"
+      }
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "与我们取得联系",
+    "form": {
+      "name": "姓名",
+      "email": "电子邮件",
+      "subject": "主题",
+      "message": "消息",
+      "submit": "发送消息",
+      "success": "消息发送成功！",
+      "error": "发送消息失败，请重试。"
+    },
+    "info": {
+      "address": "地址",
+      "phone": "电话",
+      "email": "电子邮件",
+      "hours": "营业时间"
+    }
+  }
+}

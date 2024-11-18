@@ -1,0 +1,103 @@
+{
+  "welcome": "페이판 테크에 오신 것을 환영합니다",
+  "navigation": {
+    "home": "홈",
+    "about": "회사 소개",
+    "services": "서비스",
+    "contact": "문의하기"
+  },
+  "common": {
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다",
+    "submit": "제출",
+    "cancel": "취소",
+    "readMore": "더 보기",
+    "learnMore": "자세히 알아보기"
+  },
+  "home": {
+    "hero": {
+      "title": "기술 혁신",
+      "subtitle": "최첨단 기술로 미래를 창조합니다",
+      "cta": "시작하기"
+    },
+    "features": {
+      "title": "특징",
+      "innovation": {
+        "title": "혁신",
+        "description": "기술의 한계에 도전"
+      },
+      "quality": {
+        "title": "품질",
+        "description": "모든 프로젝트에서 우수성 추구"
+      },
+      "support": {
+        "title": "지원",
+        "description": "24/7 전문 고객 지원"
+      }
+    }
+  },
+  "about": {
+    "title": "회사 소개",
+    "subtitle": "우리의 혁신 여정",
+    "mission": {
+      "title": "미션",
+      "description": "기업과 개인이 최대한의 잠재력을 발휘할 수 있도록 혁신적인 기술 솔루션을 제공합니다."
+    },
+    "vision": {
+      "title": "비전",
+      "description": "기술 발전과 디지털 변혁의 선구자가 되는 것."
+    },
+    "values": {
+      "title": "기업 가치",
+      "innovation": "혁신",
+      "integrity": "정직",
+      "excellence": "탁월함",
+      "collaboration": "협력"
+    },
+    "whyChooseUs": {
+      "title": "왜 우리를 선택해야 하나요",
+      "description": "성공적인 실적과 탁월성에 대한 헌신으로, 우리는 실질적인 비즈니스 가치를 창출하는 혁신적인 솔루션을 제공합니다. 우리의 전문가 팀은 귀하의 성공을 위해 맞춤형 서비스와 최첨단 기술 솔루션을 제공하는 데 전념하고 있습니다."
+    }
+  },
+  "services": {
+    "title": "서비스",
+    "subtitle": "비즈니스를 위한 포괄적인 솔루션",
+    "solutions": {
+      "development": {
+        "title": "소프트웨어 개발",
+        "description": "맞춤형 솔루션 제공"
+      },
+      "consulting": {
+        "title": "IT 컨설팅",
+        "description": "전문적인 기술 판단 지침"
+      },
+      "cloud": {
+        "title": "클라우드 서비스",
+        "description": "현대 비즈니스를 위한 확장 가능한 솔루션"
+      },
+      "ai": {
+        "title": "AI 솔루션",
+        "description": "지능형 자동화 및 데이터 분석"
+      }
+    }
+  },
+  "contact": {
+    "title": "문의하기",
+    "subtitle": "언제든지 연락주세요",
+    "form": {
+      "name": "이름",
+      "email": "이메일",
+      "subject": "제목",
+      "message": "메시지",
+      "submit": "보내기",
+      "success": "메시지가 전송되었습니다!",
+      "error": "전송에 실패했습니다. 다시 시도해 주세요."
+    },
+    "info": {
+      "address": "주소",
+      "phone": "전화번호",
+      "email": "이메일",
+      "hours": "영업시간"
+    }
+  }
+}

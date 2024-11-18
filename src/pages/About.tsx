@@ -1,12 +1,22 @@
 import React from 'react';
 import { Container, Typography, Box, Grid, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
+  
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+
+  const values = [
+    t('about.values.innovation'),
+    t('about.values.integrity'),
+    t('about.values.excellence'),
+    t('about.values.collaboration')
+  ];
 
   return (
     <Container>
@@ -18,10 +28,10 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <Typography variant="h2" component="h1" gutterBottom textAlign="center">
-            About FeiFan Tech
+            {t('about.title')}
           </Typography>
           <Typography variant="h5" textAlign="center" color="text.secondary" sx={{ mb: 6 }}>
-            Empowering Businesses Through Technology
+            {t('about.subtitle')}
           </Typography>
         </motion.div>
 
@@ -35,12 +45,10 @@ const About = () => {
             >
               <Paper elevation={0} sx={{ p: 4, height: '100%' }}>
                 <Typography variant="h4" gutterBottom>
-                  Our Mission
+                  {t('about.mission.title')}
                 </Typography>
                 <Typography paragraph>
-                  At FeiFan Tech, we are dedicated to delivering innovative software solutions
-                  that empower businesses to thrive in the digital age. Our mission is to
-                  transform complex challenges into elegant, efficient solutions.
+                  {t('about.mission.description')}
                 </Typography>
               </Paper>
             </motion.div>
@@ -55,15 +63,15 @@ const About = () => {
             >
               <Paper elevation={0} sx={{ p: 4, height: '100%' }}>
                 <Typography variant="h4" gutterBottom>
-                  Our Values
+                  {t('about.values.title')}
                 </Typography>
-                <Typography paragraph>
-                  • Excellence in every line of code<br />
-                  • Client-focused development<br />
-                  • Innovative problem-solving<br />
-                  • Continuous improvement<br />
-                  • Transparent communication
-                </Typography>
+                <Box component="ul" sx={{ m: 0, pl: 3 }}>
+                  {values.map((value, index) => (
+                    <Typography component="li" key={index} paragraph>
+                      {value}
+                    </Typography>
+                  ))}
+                </Box>
               </Paper>
             </motion.div>
           </Grid>
@@ -77,13 +85,10 @@ const About = () => {
         >
           <Box sx={{ mt: 6 }}>
             <Typography variant="h4" gutterBottom textAlign="center">
-              Why Choose Us?
+              {t('about.whyChooseUs.title')}
             </Typography>
             <Typography paragraph textAlign="center" sx={{ maxWidth: 800, mx: 'auto' }}>
-              With years of experience in software development and a passionate team of
-              experts, we bring both technical excellence and business acumen to every
-              project. We don't just write code; we create solutions that drive your
-              business forward.
+              {t('about.whyChooseUs.description')}
             </Typography>
           </Box>
         </motion.div>

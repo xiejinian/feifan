@@ -5,27 +5,30 @@ import CodeIcon from '@mui/icons-material/Code';
 import BusinessIcon from '@mui/icons-material/Business';
 import SupportIcon from '@mui/icons-material/Support';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { t } = useTranslation();
+  
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
 
-  const services = [
+  const features = [
     {
-      title: 'Software Development',
-      description: 'Custom software solutions tailored to your business needs',
+      title: t('home.features.innovation.title'),
+      description: t('home.features.innovation.description'),
       icon: <CodeIcon sx={{ fontSize: 40 }} />,
     },
     {
-      title: 'Business Consulting',
-      description: 'Expert guidance to transform your digital presence',
+      title: t('home.features.quality.title'),
+      description: t('home.features.quality.description'),
       icon: <BusinessIcon sx={{ fontSize: 40 }} />,
     },
     {
-      title: '24/7 Support',
-      description: 'Round-the-clock technical support and maintenance',
+      title: t('home.features.support.title'),
+      description: t('home.features.support.description'),
       icon: <SupportIcon sx={{ fontSize: 40 }} />,
     },
   ];
@@ -49,10 +52,10 @@ const Home = () => {
             transition={{ duration: 0.6 }}
           >
             <Typography variant="h2" component="h1" gutterBottom>
-              Welcome to FeiFan Tech
+              {t('home.hero.title')}
             </Typography>
             <Typography variant="h5" sx={{ mb: 4 }}>
-              Transforming Ideas into Powerful Software Solutions
+              {t('home.hero.subtitle')}
             </Typography>
             <Button
               component={Link}
@@ -61,13 +64,13 @@ const Home = () => {
               color="secondary"
               size="large"
             >
-              Get Started
+              {t('home.hero.cta')}
             </Button>
           </motion.div>
         </Container>
       </Box>
 
-      {/* Services Section */}
+      {/* Features Section */}
       <Container sx={{ py: 8 }}>
         <Typography
           variant="h3"
@@ -76,11 +79,11 @@ const Home = () => {
           gutterBottom
           sx={{ mb: 6 }}
         >
-          Our Services
+          {t('home.features.title')}
         </Typography>
         <Grid container spacing={4}>
-          {services.map((service, index) => (
-            <Grid item xs={12} md={4} key={service.title}>
+          {features.map((feature, index) => (
+            <Grid item xs={12} md={4} key={feature.title}>
               <motion.div
                 initial="hidden"
                 animate="visible"
@@ -101,12 +104,12 @@ const Home = () => {
                     },
                   }}
                 >
-                  <Box sx={{ color: 'primary.main', mb: 2 }}>{service.icon}</Box>
-                  <Typography variant="h5" component="h3" gutterBottom>
-                    {service.title}
+                  {feature.icon}
+                  <Typography variant="h5" component="h3" sx={{ mt: 2, mb: 1 }}>
+                    {feature.title}
                   </Typography>
                   <Typography color="text.secondary">
-                    {service.description}
+                    {feature.description}
                   </Typography>
                 </Box>
               </motion.div>

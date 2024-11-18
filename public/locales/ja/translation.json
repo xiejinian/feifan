@@ -1,0 +1,103 @@
+{
+  "welcome": "飛帆テックへようこそ",
+  "navigation": {
+    "home": "ホーム",
+    "about": "会社概要",
+    "services": "サービス",
+    "contact": "お問い合わせ"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "submit": "送信",
+    "cancel": "キャンセル",
+    "readMore": "詳細を見る",
+    "learnMore": "もっと詳しく"
+  },
+  "home": {
+    "hero": {
+      "title": "技術革新",
+      "subtitle": "最先端技術で未来を創造する",
+      "cta": "始めましょう"
+    },
+    "features": {
+      "title": "特徴",
+      "innovation": {
+        "title": "革新",
+        "description": "技術の限界に挑戦"
+      },
+      "quality": {
+        "title": "品質",
+        "description": "すべてのプロジェクトで卓越性を追求"
+      },
+      "support": {
+        "title": "サポート",
+        "description": "24時間365日の専門的なカスタマーサポート"
+      }
+    }
+  },
+  "about": {
+    "title": "会社概要",
+    "subtitle": "私たちのイノベーションの旅",
+    "mission": {
+      "title": "ミッション",
+      "description": "企業と個人が最大限の可能性を発揮できるよう、革新的な技術ソリューションを提供します。"
+    },
+    "vision": {
+      "title": "ビジョン",
+      "description": "技術進歩とデジタル変革の先駆者となること。"
+    },
+    "values": {
+      "title": "企業価値",
+      "innovation": "革新",
+      "integrity": "誠実",
+      "excellence": "卓越",
+      "collaboration": "協働"
+    },
+    "whyChooseUs": {
+      "title": "なぜ私たちを選ぶのか",
+      "description": "実績ある成功の記録と卓越性への取り組みにより、実際のビジネス価値を生み出す革新的なソリューションを提供しています。私たちの専門家チームは、お客様の成功に向けて、パーソナライズされたサービスと最先端の技術ソリューションを提供することに専念しています。"
+    }
+  },
+  "services": {
+    "title": "サービス",
+    "subtitle": "ビジネスのための包括的なソリューション",
+    "solutions": {
+      "development": {
+        "title": "ソフトウェア開発",
+        "description": "ニーズに合わせたカスタムソリューション"
+      },
+      "consulting": {
+        "title": "ITコンサルティング",
+        "description": "専門的な技術判断のガイダンス"
+      },
+      "cloud": {
+        "title": "クラウドサービス",
+        "description": "現代のビジネスのためのスケーラブルなソリューション"
+      },
+      "ai": {
+        "title": "AI ソリューション",
+        "description": "インテリジェントな自動化とデータ分析"
+      }
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "お気軽にご連絡ください",
+    "form": {
+      "name": "お名前",
+      "email": "メールアドレス",
+      "subject": "件名",
+      "message": "メッセージ",
+      "submit": "送信する",
+      "success": "メッセージを送信しました！",
+      "error": "送信に失敗しました。もう一度お試しください。"
+    },
+    "info": {
+      "address": "住所",
+      "phone": "電話番号",
+      "email": "メール",
+      "hours": "営業時間"
+    }
+  }
+}

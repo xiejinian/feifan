@@ -16,18 +16,21 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const navItems = [
-  { title: 'Home', path: '/' },
-  { title: 'About', path: '/about' },
-  { title: 'Services', path: '/services' },
-  { title: 'Contact', path: '/contact' },
+  { title: 'navigation.home', path: '/' },
+  { title: 'navigation.about', path: '/about' },
+  { title: 'navigation.services', path: '/services' },
+  { title: 'navigation.contact', path: '/contact' },
 ];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const { t } = useTranslation();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -42,7 +45,7 @@ const Navbar = () => {
             to={item.path}
             onClick={handleDrawerToggle}
           >
-            <ListItemText primary={item.title} />
+            <ListItemText primary={t(item.title)} />
           </ListItemButton>
         </ListItem>
       ))}
@@ -51,58 +54,67 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar position="fixed" color="default" elevation={1}>
-        <Toolbar>
-          <Typography
-            variant="h6"
-            component={Link}
-            to="/"
-            sx={{
-              flexGrow: 1,
-              color: 'primary.main',
-              textDecoration: 'none',
-              fontWeight: 'bold',
-            }}
-          >
-            FeiFan Tech
-          </Typography>
-          {isMobile ? (
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
+      <AppBar position="static">
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            {isMobile && (
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2 }}
+              >
+                <MenuIcon />
+              </IconButton>
+            )}
+            <Typography
+              variant="h6"
+              component={Link}
+              to="/"
+              sx={{
+                color: 'inherit',
+                textDecoration: 'none',
+                mr: 3
+              }}
             >
-              <MenuIcon />
-            </IconButton>
-          ) : (
-            <Box sx={{ display: 'flex', gap: 2 }}>
-              {navItems.map((item) => (
-                <Button
-                  key={item.title}
-                  component={Link}
-                  to={item.path}
-                  color="inherit"
-                >
-                  {item.title}
-                </Button>
-              ))}
-            </Box>
-          )}
+              {t('welcome')}
+            </Typography>
+            {!isMobile && (
+              <Box sx={{ display: 'flex' }}>
+                {navItems.map((item) => (
+                  <Button
+                    key={item.title}
+                    component={Link}
+                    to={item.path}
+                    sx={{ color: '#fff', mx: 1 }}
+                  >
+                    {t(item.title)}
+                  </Button>
+                ))}
+              </Box>
+            )}
+          </Box>
+          <Box sx={{ ml: 2 }}>
+            <LanguageSwitcher />
+          </Box>
         </Toolbar>
       </AppBar>
       <Drawer
         variant="temporary"
-        anchor="right"
+        anchor="left"
         open={mobileOpen}
         onClose={handleDrawerToggle}
         ModalProps={{
           keepMounted: true,
         }}
+        sx={{
+          display: { xs: 'block', sm: 'none' },
+          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+        }}
       >
         {drawer}
       </Drawer>
-      <Toolbar /> {/* Spacer */}
     </>
   );
 };

@@ -14,8 +14,11 @@ import {
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
+  const { t } = useTranslation();
+  
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -23,8 +26,8 @@ const Services = () => {
 
   const services = [
     {
-      title: 'Custom Software Development',
-      description: 'Tailored solutions for your unique business needs',
+      title: t('services.solutions.development.title'),
+      description: t('services.solutions.development.description'),
       features: [
         'Web Applications',
         'Mobile Apps',
@@ -34,8 +37,8 @@ const Services = () => {
       ],
     },
     {
-      title: 'Technical Consulting',
-      description: 'Expert guidance for your digital transformation',
+      title: t('services.solutions.consulting.title'),
+      description: t('services.solutions.consulting.description'),
       features: [
         'Technology Assessment',
         'Architecture Design',
@@ -45,14 +48,14 @@ const Services = () => {
       ],
     },
     {
-      title: 'Maintenance & Support',
-      description: '24/7 technical support and maintenance services',
+      title: t('services.solutions.cloud.title'),
+      description: t('services.solutions.cloud.description'),
       features: [
-        'Regular Updates',
-        'Bug Fixes',
-        'Performance Monitoring',
-        'Security Patches',
-        'Technical Support',
+        'Cloud Migration',
+        'Cloud Infrastructure',
+        'Scalability Solutions',
+        'Cloud Security',
+        'Performance Optimization',
       ],
     },
   ];
@@ -67,7 +70,7 @@ const Services = () => {
           transition={{ duration: 0.6 }}
         >
           <Typography variant="h2" component="h1" gutterBottom textAlign="center">
-            Our Services
+            {t('services.title')}
           </Typography>
           <Typography
             variant="h5"
@@ -75,7 +78,7 @@ const Services = () => {
             color="text.secondary"
             sx={{ mb: 6 }}
           >
-            Comprehensive Software Solutions for Your Business
+            {t('services.subtitle')}
           </Typography>
         </motion.div>
 
@@ -101,25 +104,23 @@ const Services = () => {
                 >
                   <CardHeader
                     title={service.title}
-                    titleTypographyProps={{ align: 'center' }}
-                    sx={{
-                      backgroundColor: 'primary.main',
-                      color: 'white',
-                    }}
+                    titleTypographyProps={{ align: 'center', variant: 'h5' }}
+                    sx={{ pb: 0 }}
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography
                       variant="subtitle1"
-                      align="center"
                       color="text.secondary"
-                      paragraph
+                      align="center"
+                      gutterBottom
+                      sx={{ mb: 2 }}
                     >
                       {service.description}
                     </Typography>
                     <List>
                       {service.features.map((feature) => (
-                        <ListItem key={feature}>
-                          <ListItemIcon>
+                        <ListItem key={feature} sx={{ py: 0.5 }}>
+                          <ListItemIcon sx={{ minWidth: 36 }}>
                             <CheckCircleOutlineIcon color="primary" />
                           </ListItemIcon>
                           <ListItemText primary={feature} />
