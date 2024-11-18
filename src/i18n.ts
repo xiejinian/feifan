@@ -9,6 +9,7 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'en',
+    lng: 'en', // Set default language to English
     debug: process.env.NODE_ENV === 'development',
     
     interpolation: {
