@@ -9,7 +9,8 @@ const LanguageSwitcher: React.FC = () => {
     { code: 'en', name: 'English' },
     { code: 'zh', name: '中文' },
     { code: 'ja', name: '日本語' },
-    { code: 'ko', name: '한국어' }
+    { code: 'ko', name: '한국어' },
+    { code: 'ru', name: 'Русский' }
   ];
 
   const handleChange = (event: SelectChangeEvent<string>) => {

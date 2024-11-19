@@ -27,7 +27,7 @@ i18n
       cookieMinutes: 10080, // 7 days
     },
 
-    supportedLngs: ['en', 'zh', 'ja', 'ko'],
+    supportedLngs: ['en', 'zh', 'ja', 'ko', 'ru'],
     nonExplicitSupportedLngs: true,
   });
 
