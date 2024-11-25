@@ -2,13 +2,18 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 const contactRoutes = require('./routes/contact');
 const authRoutes = require('./routes/auth');
 
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? 'https://your-vercel-domain.vercel.app' 
+    : 'http://localhost:3000'
+}));
 app.use(express.json());
 
 // Check environment variables
@@ -19,7 +24,7 @@ if (!process.env.JWT_SECRET) {
 }
 console.log('JWT_SECRET is properly set');
 
-// Routes
+// API Routes
 app.use('/api/contact', contactRoutes);
 app.use('/api/auth', authRoutes);
 
@@ -57,8 +62,5 @@ mongoose.connection.on('disconnected', () => {
   console.log('Mongoose disconnected from MongoDB');
 });
 
-// Start server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// Vercel serverless function export
+module.exports = app;
