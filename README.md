@@ -1,43 +1,92 @@
-# Getting Started with Create React App
+# Feifan Tech Contact Form Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack application for managing contact form submissions with an admin interface.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Contact form for user submissions
+- Admin interface for managing submissions
+- Secure authentication system
+- MongoDB database integration
+- JWT-based authentication
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Node.js (v14 or higher)
+- MongoDB Atlas account
+- npm or yarn
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Setup Instructions
 
-### `npm test`
+1. Clone the repository
+```bash
+git clone [repository-url]
+cd feifan-tech
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies
+```bash
+npm install
+```
 
-### `npm run build`
+3. Configure environment variables
+- Create a `.env` file in the root directory
+- Add the following variables:
+```
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Create admin user
+```bash
+node server/scripts/createAdmin.js
+```
+This will create an admin user with:
+- Username: admin
+- Password: admin123
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Important:** This step is required before you can log in to the admin interface.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. Start the application
 
-### `npm run eject`
+Backend server:
+```bash
+npm run server
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Frontend development server:
+```bash
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application will be available at:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:5000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Public Contact Form
+- Access the contact form at http://localhost:3000
+- Fill in the required fields and submit
+
+2. Admin Interface
+- Access the admin login at http://localhost:3000/login
+- Log in with the admin credentials created in step 4
+- View and manage contact form submissions
+
+## Development
+
+### Available Scripts
+
+#### `npm start`
+Runs the frontend in development mode at http://localhost:3000
+
+#### `npm run server`
+Runs the backend server at http://localhost:5000
+
+#### `npm run build`
+Builds the frontend for production
 
 ## Learn More
 

@@ -18,6 +18,7 @@ import { useTranslation } from 'react-i18next';
 const Contact = () => {
   const { t } = useTranslation();
   const [formStatus, setFormStatus] = useState<'success' | 'error' | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,12 +31,39 @@ const Contact = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    setFormStatus('success');
-    // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setFormStatus(null);
+    setErrorMessage([]);
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        if (data.errors) {
+          setErrorMessage(data.errors);
+        } else {
+          setErrorMessage(['Failed to submit form']);
+        }
+        setFormStatus('error');
+        return;
+      }
+
+      setFormStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setErrorMessage(['An unexpected error occurred. Please try again later.']);
+      setFormStatus('error');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -193,7 +221,9 @@ const Contact = () => {
                 )}
                 {formStatus === 'error' && (
                   <Alert severity="error" sx={{ mt: 2 }}>
-                    {t('contact.form.error')}
+                    {errorMessage.map((error, index) => (
+                      <div key={index}>{error}</div>
+                    ))}
                   </Alert>
                 )}
               </Paper>
