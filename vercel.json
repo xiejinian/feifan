@@ -17,6 +17,10 @@
       "dest": "server/server.js"
     },
     {
+      "src": "^/static/(.*)",
+      "dest": "/build/static/$1"
+    },
+    {
       "src": "/favicon.ico",
       "dest": "/build/favicon.ico"
     },
@@ -27,6 +31,12 @@
     {
       "src": "/(.*)",
       "dest": "/build/index.html"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
