@@ -17,26 +17,20 @@
       "dest": "server/server.js"
     },
     {
-      "handle": "filesystem"
-    },
-    {
       "src": "/static/(.*)",
-      "dest": "/build/static/$1"
+      "dest": "/static/$1"
     },
     {
       "src": "/favicon.ico",
-      "dest": "/build/favicon.ico"
+      "dest": "/favicon.ico"
     },
     {
       "src": "/manifest.json",
-      "dest": "/build/manifest.json"
+      "dest": "/manifest.json"
     },
     {
       "src": "/(.*)",
-      "dest": "/build/index.html",
-      "headers": {
-        "Cache-Control": "s-maxage=0"
-      }
+      "dest": "/"
     }
   ]
 }
