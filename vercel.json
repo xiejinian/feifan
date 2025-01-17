@@ -17,18 +17,6 @@
       "destination": "server/server.js", 
       "handle": "filesystem"
     },
-     {
-      "source": "^/static/(.*)",
-      "destination": "/build/static/$1",
-    },
-    {
-      "source": "/favicon.ico",
-      "destination": "/build/favicon.ico"
-    },
-    {
-      "source": "/manifest.json",
-      "destination": "/build/manifest.json"
-    },
     {
       "source": "/(.*)", 
       "destination": "/index.html" 
