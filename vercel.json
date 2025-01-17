@@ -30,8 +30,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/build/index.html",
-      "handle": "filesystem"
+      "dest": "/build/index.html"
     }
   ]
 }
