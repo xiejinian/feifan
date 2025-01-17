@@ -38,5 +38,5 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ]
+  ] 
 }
