@@ -4,7 +4,8 @@
     "home": "홈",
     "about": "회사 소개",
     "services": "서비스",
-    "contact": "문의하기"
+    "contact": "문의하기",
+    "executives": "기술"
   },
   "common": {
     "loading": "로딩 중...",

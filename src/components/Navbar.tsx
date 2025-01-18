@@ -24,7 +24,7 @@ const navItems = [
   { title: 'navigation.about', path: '/about' },
   { title: 'navigation.services', path: '/services' },
   { title: 'navigation.contact', path: '/contact' },
-  { title: 'Executives', path: '/executives' }
+  { title: 'navigation.executives', path: '/executives' }
 ];
 
 const Navbar = () => {

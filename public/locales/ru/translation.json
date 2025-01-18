@@ -4,7 +4,8 @@
     "home": "Главная",
     "about": "О нас",
     "services": "Услуги",
-    "contact": "Контакты"
+    "contact": "Контакты",
+    "executives" : "Лидеры"
   },
   "common": {
     "loading": "Загрузка...",

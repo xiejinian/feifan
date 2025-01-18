@@ -4,7 +4,8 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
-    "contact": "Contact"
+    "contact": "Contact",
+    "executives": "Executives"
   },
   "common": {
     "loading": "Loading...",
