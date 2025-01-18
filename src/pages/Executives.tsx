@@ -15,7 +15,7 @@ const executives: Executive[] = [
     name: "Yufeng Li",
     position: "executives.positions.ceo",
     bio: "executives.bios.ceo",
-    imageUrl: "/assets/executives/ceo.jpg"
+    imageUrl: "/assets/executives/ceo.png"
   },
   {
     name: "Jinian Xie",
