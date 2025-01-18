@@ -10,6 +10,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 import Login from './pages/Login';
+import Executives from './pages/Executives';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/executives" element={<Executives />} />
           <Route path="/login" element={<Login />} />
           <Route
             path="/admin"

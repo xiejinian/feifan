@@ -99,5 +99,17 @@
       "email": "Email",
       "hours": "Business Hours"
     }
+  },
+  "executives": {
+    "title": "Our Leadership Team",
+    "subtitle": "Meet the executives who drive our vision and success",
+    "positions": {
+      "ceo": "Chief Executive Officer",
+      "cto": "Chief Technology Officer"
+    },
+    "bios": {
+      "ceo": "20+ years of experience in technology and business leadership.",
+      "cto": "Expert in E-commerce and cloud computing with 20+ years of experience."
+    }
   }
 }
