@@ -77,17 +77,17 @@ const Contact = () => {
     {
       icon: <EmailIcon fontSize="large" />,
       title: t('contact.info.email'),
-      content: 'contact@feifantech.com',
+      content: 'yymhxie@gmail.com',
     },
     {
       icon: <PhoneIcon fontSize="large" />,
       title: t('contact.info.phone'),
-      content: '+1 (555) 123-4567',
+      content: '+86 15858108106',
     },
     {
       icon: <LocationOnIcon fontSize="large" />,
       title: t('contact.info.address'),
-      content: 'Silicon Valley, CA',
+      content: 'Hangzhou, Zhejiang, China',
     },
   ];
 
