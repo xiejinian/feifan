@@ -3,9 +3,9 @@
   "navigation": {
     "home": "首页",
     "about": "关于我们",
-    "services": "服务",
+    "services": "产品服务",
     "contact": "联系我们",
-    "executives": "高管"
+    "executives": "管理团队"
   },
   "common": {
     "loading": "加载中...",
@@ -102,7 +102,7 @@
     }
   },
   "executives": {
-    "title": "领导团队",
+    "title": "管理团队",
     "subtitle": "认识推动我们愿景和成功的管理团队",
     "positions": {
       "ceo": "首席执行官",

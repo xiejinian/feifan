@@ -5,17 +5,15 @@ import { useTranslation } from 'react-i18next';
 
 const About = () => {
   const { t } = useTranslation();
-  
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
 
   const values = [
-    t('about.values.innovation'),
-    t('about.values.integrity'),
-    t('about.values.excellence'),
-    t('about.values.collaboration')
+    t('about.values.innovation') + '  ' + t('about.values.excellence'),
+    t('about.values.integrity') + "  " + t('about.values.collaboration')
   ];
 
   return (
@@ -42,6 +40,7 @@ const About = () => {
               animate="visible"
               variants={fadeIn}
               transition={{ duration: 0.6, delay: 0.2 }}
+              style={{ height: '100%' }}
             >
               <Paper elevation={0} sx={{ p: 4, height: '100%' }}>
                 <Typography variant="h4" gutterBottom>
@@ -60,6 +59,7 @@ const About = () => {
               animate="visible"
               variants={fadeIn}
               transition={{ duration: 0.6, delay: 0.4 }}
+              style={{ height: '100%' }}
             >
               <Paper elevation={0} sx={{ p: 4, height: '100%' }}>
                 <Typography variant="h4" gutterBottom>
@@ -67,7 +67,7 @@ const About = () => {
                 </Typography>
                 <Box component="ul" sx={{ m: 0, pl: 3 }}>
                   {values.map((value, index) => (
-                    <Typography component="li" key={index} paragraph>
+                    <Typography component="li" key={index}>
                       {value}
                     </Typography>
                   ))}
