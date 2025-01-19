@@ -15,7 +15,7 @@ const Footer = () => {
       }}
     >
       <Typography variant="body2">
-        © {new Date().getFullYear()} Feifan Tech. All rights reserved.
+        © 2020 to {new Date().getFullYear()} Feifan Tech. All rights reserved.
       </Typography>
     </Box>
   );
