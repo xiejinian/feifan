@@ -12,6 +12,7 @@ import Admin from './pages/Admin';
 import Login from './pages/Login';
 import Executives from './pages/Executives';
 import ProtectedRoute from './components/ProtectedRoute';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             }
           />
         </Routes>
+        <Footer />
       </Router>
     </ThemeProvider>
   );
