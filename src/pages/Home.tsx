@@ -92,6 +92,7 @@ const Home = () => {
                 animate="visible"
                 variants={fadeIn}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
+                style= {{ height: '100%' }}
               >
                 <Box
                   sx={{
