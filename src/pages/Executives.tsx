@@ -54,7 +54,7 @@ const ExecutivesPage = () => {
               <StyledCard>
                 <CardMedia
                   component="img"
-                  height="300"
+                  height="360"
                   image={executive.imageUrl}
                   alt={executive.name}
                   sx={{ objectFit: 'cover' }}
