@@ -80,6 +80,63 @@
         "title": "AI Solutions",
         "description": "Intelligent automation and data analysis"
       }
+    },
+    "successCases": {
+      "title": "Success Stories",
+      "subtitle": "Real Results, Real Impact",
+      "cases": {
+        "case1": {
+          "title": "Global E-commerce Platform Transformation",
+          "client": "Leading Retail Corporation",
+          "challenge": "Modernizing legacy systems and scaling for global operations",
+          "solution": "Implemented microservices architecture with cloud-native solutions",
+          "results": [
+            "300% increase in transaction processing speed",
+            "99.99% system uptime",
+            "50% reduction in operational costs"
+          ],
+          "technologies": [
+            "Kubernetes",
+            "Microservices",
+            "Cloud Computing",
+            "AI/ML"
+          ]
+        },
+        "case2": {
+          "title": "Smart City Infrastructure Management",
+          "client": "Metropolitan Government",
+          "challenge": "Inefficient urban resource management and monitoring",
+          "solution": "Developed IoT-based smart monitoring system with real-time analytics",
+          "results": [
+            "40% reduction in energy consumption",
+            "Real-time incident response",
+            "Improved citizen satisfaction"
+          ],
+          "technologies": [
+            "IoT",
+            "Big Data",
+            "AI Analytics",
+            "Cloud Platform"
+          ]
+        },
+        "case3": {
+          "title": "FinTech Security Enhancement",
+          "client": "International Banking Institution",
+          "challenge": "Increasing cyber threats and regulatory compliance needs",
+          "solution": "Implemented advanced security system with AI-powered threat detection",
+          "results": [
+            "Zero security breaches",
+            "90% faster threat detection",
+            "100% compliance achievement"
+          ],
+          "technologies": [
+            "AI Security",
+            "Blockchain",
+            "Cloud Security",
+            "Biometrics"
+          ]
+        }
+      }
     }
   },
   "contact": {
