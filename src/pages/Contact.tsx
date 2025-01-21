@@ -100,14 +100,14 @@ const Contact = () => {
           variants={fadeIn}
           transition={{ duration: 0.6 }}
         >
-          <Typography variant="h2" component="h1" gutterBottom textAlign="center">
+          <Typography variant="h2" component="h1" gutterBottom textAlign="center" sx={{ fontWeight: 700 }}>
             {t('contact.title')}
           </Typography>
           <Typography
             variant="h5"
             textAlign="center"
             color="text.secondary"
-            sx={{ mb: 6 }}
+            sx={{ mb: 6, maxWidth: '800px', mx: 'auto' }}
           >
             {t('contact.subtitle')}
           </Typography>
@@ -132,11 +132,28 @@ const Contact = () => {
                       display: 'flex',
                       alignItems: 'center',
                       gap: 2,
+                      borderRadius: 2,
+                      boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                      transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+                      '&:hover': {
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 6px 30px rgba(0,0,0,0.12)',
+                        '& .MuiSvgIcon-root': {
+                          transform: 'scale(1.1)',
+                          color: '#283593'
+                        }
+                      }
                     }}
                   >
-                    <Box sx={{ color: 'primary.main' }}>{info.icon}</Box>
+                    <Box sx={{
+                      color: '#1a237e',
+                      transition: 'all 0.3s ease-in-out',
+                      '& .MuiSvgIcon-root': {
+                        transition: 'all 0.3s ease-in-out'
+                      }
+                    }}>{info.icon}</Box>
                     <Box>
-                      <Typography variant="h6" gutterBottom>
+                      <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
                         {info.title}
                       </Typography>
                       <Typography color="text.secondary">{info.content}</Typography>
@@ -154,7 +171,25 @@ const Contact = () => {
               variants={fadeIn}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Paper elevation={0} sx={{ p: 4 }}>
+              <Paper
+                elevation={0}
+                sx={{
+                  p: 4,
+                  borderRadius: 2,
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '4px',
+                    background: 'linear-gradient(90deg, #1a237e, #283593)'
+                  }
+                }}
+              >
                 <form onSubmit={handleSubmit}>
                   <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>
@@ -165,6 +200,14 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        variant="outlined"
+                        sx={{
+                          '& .MuiOutlinedInput-root': {
+                            '&:hover fieldset': {
+                              borderColor: 'primary.main',
+                            },
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -176,6 +219,14 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        variant="outlined"
+                        sx={{
+                          '& .MuiOutlinedInput-root': {
+                            '&:hover fieldset': {
+                              borderColor: 'primary.main',
+                            },
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12}>
@@ -186,6 +237,14 @@ const Contact = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         required
+                        variant="outlined"
+                        sx={{
+                          '& .MuiOutlinedInput-root': {
+                            '&:hover fieldset': {
+                              borderColor: 'primary.main',
+                            },
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12}>
@@ -198,15 +257,35 @@ const Contact = () => {
                         value={formData.message}
                         onChange={handleChange}
                         required
+                        variant="outlined"
+                        sx={{
+                          '& .MuiOutlinedInput-root': {
+                            '&:hover fieldset': {
+                              borderColor: 'primary.main',
+                            },
+                          },
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12}>
                       <Button
                         type="submit"
                         variant="contained"
-                        color="primary"
                         size="large"
                         fullWidth
+                        sx={{
+                          py: 1.5,
+                          fontSize: '1.1rem',
+                          fontWeight: 600,
+                          textTransform: 'none',
+                          background: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
+                          boxShadow: '0 4px 14px 0 rgba(0,0,0,0.25)',
+                          '&:hover': {
+                            background: 'linear-gradient(45deg, #283593 30%, #1a237e 90%)',
+                            transform: 'translateY(-2px)',
+                            boxShadow: '0 6px 20px rgba(0,0,0,0.3)'
+                          }
+                        }}
                       >
                         {t('contact.form.submit')}
                       </Button>
