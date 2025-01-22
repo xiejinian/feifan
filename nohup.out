@@ -1,0 +1,39 @@
+
+> feifan-tech@0.1.0 dev
+> concurrently "npm run start" "npm run server"
+
+[0] 
+[0] > feifan-tech@0.1.0 start
+[0] > react-scripts start
+[0] 
+[1] 
+[1] > feifan-tech@0.1.0 server
+[1] > node server/server.js
+[1] 
+[1] Checking environment variables...
+[1] JWT_SECRET is properly set
+[1] Attempting to connect to MongoDB...
+[1] Server is running on port 5000
+[1] Mongoose connected to MongoDB
+[1] MongoDB connected successfully
+[0] (node:9754) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[0] (Use `node --trace-deprecation ...` to show where the warning was created)
+[0] (node:9754) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[0] Starting the development server...
+[0] 
+[0] Compiled successfully!
+[0] 
+[0] You can now view feifan-tech in the browser.
+[0] 
+[0]   Local:            http://localhost:3000
+[0]   On Your Network:  http://192.168.210.70:3000
+[0] 
+[0] Note that the development build is not optimized.
+[0] To create a production build, use npm run build.
+[0] 
+[0] webpack compiled successfully
+[0] Files successfully emitted, waiting for typecheck results...
+[0] Issues checking in progress...
+[0] No issues found.
+[1] npm run server exited with code SIGTERM
+[0] npm run start exited with code SIGTERM
