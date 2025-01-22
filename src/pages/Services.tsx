@@ -22,6 +22,7 @@ import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import { useTranslation } from 'react-i18next';
 
+
 interface SuccessCase {
   title: string;
   client: string;
@@ -75,30 +76,30 @@ const Services = () => {
     },
   ];
 
-  const successCases = [
+  const successCases: SuccessCase[] = [
     {
       title: t('services.successCases.cases.case1.title'),
       client: t('services.successCases.cases.case1.client'),
       challenge: t('services.successCases.cases.case1.challenge'),
       solution: t('services.successCases.cases.case1.solution'),
-      results: t('services.successCases.cases.case1.results', { returnObjects: true }) as string[],
-      technologies: t('services.successCases.cases.case1.technologies', { returnObjects: true }) as string[]
+      results: (t('services.successCases.cases.case1.results', { returnObjects: true }) as string[]),
+      technologies: (t('services.successCases.cases.case1.technologies', { returnObjects: true }) as string[])
     },
     {
       title: t('services.successCases.cases.case2.title'),
       client: t('services.successCases.cases.case2.client'),
       challenge: t('services.successCases.cases.case2.challenge'),
       solution: t('services.successCases.cases.case2.solution'),
-      results: t('services.successCases.cases.case2.results', { returnObjects: true }) as string[],
-      technologies: t('services.successCases.cases.case2.technologies', { returnObjects: true }) as string[]
+      results: (t('services.successCases.cases.case2.results', { returnObjects: true }) as string[]),
+      technologies: (t('services.successCases.cases.case2.technologies', { returnObjects: true }) as string[])
     },
     {
       title: t('services.successCases.cases.case3.title'),
       client: t('services.successCases.cases.case3.client'),
       challenge: t('services.successCases.cases.case3.challenge'),
       solution: t('services.successCases.cases.case3.solution'),
-      results: t('services.successCases.cases.case3.results', { returnObjects: true }) as string[],
-      technologies: t('services.successCases.cases.case3.technologies', { returnObjects: true }) as string[]
+      results: (t('services.successCases.cases.case3.results', { returnObjects: true }) as string[]),
+      technologies: (t('services.successCases.cases.case3.technologies', { returnObjects: true }) as string[])
     },
   ];
 
