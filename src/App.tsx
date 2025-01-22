@@ -2,7 +2,8 @@ import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import theme from './theme';
+import { createCustomTheme } from './theme';
+import { useThemeMode } from './hooks/useThemeMode';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -15,11 +16,14 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Footer from './components/Footer';
 
 function App() {
+  const { mode, toggleColorMode } = useThemeMode();
+  const theme = createCustomTheme(mode);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Navbar />
+        <Navbar onToggleTheme={toggleColorMode} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

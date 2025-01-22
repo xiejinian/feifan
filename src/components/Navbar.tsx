@@ -16,10 +16,15 @@ import {
   SvgIcon
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 
+interface NavbarProps {
+  onToggleTheme: () => void;
+}
 
 const navItems = [
   { title: 'navigation.home', path: '/' },
@@ -29,7 +34,7 @@ const navItems = [
   { title: 'navigation.executives', path: '/executives' }
 ];
 
-const Navbar = () => {
+const Navbar: React.FC<NavbarProps> = ({ onToggleTheme }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -127,7 +132,14 @@ const Navbar = () => {
               </Box>
             )}
           </Box>
-          <Box sx={{ ml: 2 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <IconButton
+              sx={{ ml: 1, color: '#fff' }}
+              onClick={onToggleTheme}
+              color="inherit"
+            >
+              {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+            </IconButton>
             <LanguageSwitcher />
           </Box>
         </Toolbar>
