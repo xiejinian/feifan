@@ -163,11 +163,17 @@
     "subtitle": "Meet the executives who drive our vision and success",
     "positions": {
       "ceo": "Chief Executive Officer",
-      "cto": "Chief Technology Officer"
+      "cto": "Chief Technology Officer",
+      "cai_scientist": "Chief AI Scientist",
+      "cps_scientist": "Chief Productivity Scientist",
+      "chs_scientist": "Chief Hardware Scientist"
     },
     "bios": {
       "ceo": "20+ years of experience in technology and business leadership.",
-      "cto": "Expert in E-commerce and cloud computing with 20+ years of experience."
+      "cto": "Expert in E-commerce and cloud computing with 20+ years of experience.",
+      "cai_scientist": "Leading AI research and development of next-generation intelligent systems.",
+      "cps_scientist": "Specializing in productivity enhancement and workflow optimization.",
+      "chs_scientist": "Pioneer in hardware innovation and system architecture design."
     }
   }
 }
