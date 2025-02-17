@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Typography, Grid, Card, CardContent, Box, Avatar } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Container, Typography, Grid, CardContent, Box, Avatar } from '@mui/material';
+// import { styled } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 
 interface Executive {
