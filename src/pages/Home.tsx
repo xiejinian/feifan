@@ -69,6 +69,7 @@ const Home = () => {
             <Typography
               variant="h2"
               component="h1"
+              textAlign="center"
               gutterBottom
               sx={{
                 fontWeight: 700,
@@ -80,6 +81,7 @@ const Home = () => {
               {t('home.hero.title')}
             </Typography>
             <Typography
+              textAlign="center"
               variant="h5"
               sx={{
                 mb: 4,
@@ -90,27 +92,32 @@ const Home = () => {
             >
               {t('home.hero.subtitle')}
             </Typography>
-            <Button
-              component={Link}
-              to="/contact"
-              variant="contained"
-              color="secondary"
-              size="large"
-              sx={{
-                py: 1.5,
-                px: 4,
-                fontSize: '1.1rem',
-                fontWeight: 600,
-                textTransform: 'none',
-                boxShadow: '0 4px 14px 0 rgba(0,0,0,0.25)',
-                '&:hover': {
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 6px 20px rgba(0,0,0,0.3)'
-                }
-              }}
-            >
-              {t('home.hero.cta')}
-            </Button>
+            <Box sx={{ 
+              textAlign: 'center',
+              mt: 4
+            }}>
+              <Button
+                component={Link}
+                to="/contact"
+                variant="contained"
+                color="secondary"
+                size="large"
+                sx={{
+                  py: 1.5,
+                  px: 4,
+                  fontSize: '1.1rem',
+                  fontWeight: 600,
+                  textTransform: 'none',
+                  boxShadow: '0 4px 14px 0 rgba(0,0,0,0.25)',
+                  '&:hover': {
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 6px 20px rgba(0,0,0,0.3)'
+                  }
+                }}
+              >
+                {t('home.hero.cta')}
+              </Button>
+            </Box>
           </motion.div>
         </Container>
       </Box>
