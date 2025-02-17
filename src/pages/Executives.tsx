@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Grid, Card, CardContent, CardMedia, Box, Avatar } from '@mui/material';
+import { Container, Typography, Grid, Card, CardContent, Box, Avatar } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 
@@ -44,15 +44,15 @@ const executives: Executive[] = [
   // Add more executives as needed
 ];
 
-const StyledCard = styled(Card)(({ theme }) => ({
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  transition: 'transform 0.2s',
-  '&:hover': {
-    transform: 'scale(1.02)',
-  },
-}));
+// const StyledCard = styled(Card)(({ theme }) => ({
+//   height: '100%',
+//   display: 'flex',
+//   flexDirection: 'column',
+//   transition: 'transform 0.2s',
+//   '&:hover': {
+//     transform: 'scale(1.02)',
+//   },
+// }));
 
 const ExecutivesPage = () => {
   const { t } = useTranslation();
