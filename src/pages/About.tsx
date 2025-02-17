@@ -25,10 +25,10 @@ const About = () => {
           variants={fadeIn}
           transition={{ duration: 0.6 }}
         >
-          <Typography variant="h2" component="h1" gutterBottom textAlign="center" sx={{ fontWeight: 700 }}>
+          <Typography   variant="h2" component="h1" gutterBottom textAlign="center" sx={{ fontWeight: 700 }}>
             {t('about.title')}
           </Typography>
-          <Typography variant="h5" textAlign="center" color="text.secondary" sx={{ mb: 6, maxWidth: '800px', mx: 'auto' }}>
+          <Typography   variant="h5" textAlign="center" color="text.secondary" sx={{ mb: 6, maxWidth: '800px', mx: 'auto' }}>
             {t('about.subtitle')}
           </Typography>
         </motion.div>
@@ -67,10 +67,10 @@ const About = () => {
                   },
                 }}
               >
-                <Typography variant="h4" gutterBottom sx={{ color: 'primary.main', fontWeight: 600 }}>
+                <Typography    textAlign="center" variant="h4" gutterBottom sx={{ color: 'primary.main', fontWeight: 600 }}>
                   {t('about.mission.title')}
                 </Typography>
-                <Typography paragraph sx={{ lineHeight: 1.7, fontSize: '1.1rem' }}>
+                <Typography    textAlign="center" paragraph sx={{ lineHeight: 1.7, fontSize: '1.1rem' }}>
                   {t('about.mission.description')}
                 </Typography>
               </Paper>
@@ -110,12 +110,13 @@ const About = () => {
                   },
                 }}
               >
-                <Typography variant="h4" gutterBottom sx={{ color: 'primary.main', fontWeight: 600 }}>
+                <Typography   textAlign="center" variant="h4" gutterBottom sx={{ color: 'primary.main', fontWeight: 600 }}>
                   {t('about.values.title')}
                 </Typography>
-                <Box component="ul" sx={{ m: 0, pl: 3 }}>
+                <Box sx={{ m: 0, pl: 3 }}>
                   {values.map((value, index) => (
                     <Typography
+                      textAlign="center"
                       component="li"
                       key={index}
                       sx={{
