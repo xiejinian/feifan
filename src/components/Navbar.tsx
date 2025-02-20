@@ -62,7 +62,14 @@ const Navbar: React.FC<NavbarProps> = ({ onToggleTheme }) => {
 
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: '#1a237e' }}>
+      <AppBar 
+        position="sticky" 
+        sx={{ 
+          background: 'linear-gradient(45deg, #1a237e 30%, #283593 90%)',
+          zIndex: 1200,
+          boxShadow: '0 3px 15px rgba(0,0,0,0.2)'
+        }}
+      >
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             {isMobile && (
