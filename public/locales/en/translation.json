@@ -166,14 +166,16 @@
       "cto": "Chief Technology Officer",
       "cai_scientist": "Chief AI Scientist",
       "cps_scientist": "Chief Productivity Scientist",
-      "chs_scientist": "Chief Hardware Scientist"
+      "chs_scientist": "Chief Hardware Scientist",
+      "csd": "Chief Software Developer"
     },
     "bios": {
       "ceo": "20+ years of experience in technology and business leadership.",
       "cto": "Expert in E-commerce and cloud computing with 20+ years of experience.",
       "cai_scientist": "Leading AI research and development of next-generation intelligent systems.",
       "cps_scientist": "Specializing in productivity enhancement and workflow optimization.",
-      "chs_scientist": "Pioneer in hardware innovation and system architecture design."
+      "chs_scientist": "Pioneer in hardware innovation and system architecture design.",
+      "csd": "Full-stack Development and System Architecture Expert"
     }
   }
 }

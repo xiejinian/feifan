@@ -45,6 +45,12 @@ const executives: Executive[] = [
     bio: "executives.bios.chs_scientist",
     imageUrl: "/assets/executives/chs_scientist.jpg"
   },
+  {
+    name: 'Yugang Wang',
+    position: 'executives.positions.csd',
+    bio: 'executives.bios.csd',
+    imageUrl: '/images/executives/yugang-wang.jpg'
+  },
   // Add more executives as needed
 ];
 
