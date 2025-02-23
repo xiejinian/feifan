@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   Container,
   Typography,
@@ -13,6 +13,7 @@ import {
   ListItemText,
   Chip,
   Divider,
+  Paper,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
@@ -21,6 +22,9 @@ import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import { useTranslation } from 'react-i18next';
+import Particles from "react-tsparticles";
+import { Engine } from "tsparticles-engine";
+import { loadSlim } from "tsparticles-slim";
 
 
 interface SuccessCase {
@@ -103,172 +107,295 @@ const Services = () => {
     },
   ];
 
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadSlim(engine);
+  }, []);
+
   return (
-    <Container>
-      <Box sx={{ py: 8 }}>
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          transition={{ duration: 0.6 }}
-        >
-          <Typography variant="h2" component="h1" gutterBottom textAlign="center" sx={{ fontWeight: 700 }}>
-            {t('services.title')}
-          </Typography>
-          <Typography
-            variant="h5"
-            textAlign="center"
-            color="text.secondary"
-            sx={{ mb: 8, maxWidth: '800px', mx: 'auto' }}
-          >
-            {t('services.subtitle')}
-          </Typography>
-        </motion.div>
+    <Box sx={{ position: 'relative', minHeight: '100vh' }}>
+      <Particles
+        id="tsparticles-services"
+        init={particlesInit}
+        options={{
+          background: {
+            color: {
+              value: "#1a237e",
+            },
+          },
+          particles: {
+            number: {
+              value: 50,
+              density: {
+                enable: true,
+                area: 800,
+              },
+            },
+            color: {
+              value: ["#ffffff", "#4fc3f7", "#8be9fd"],
+            },
+            shape: {
+              type: ["circle", "square"],
+            },
+            size: {
+              value: { min: 2, max: 4 },
+            },
+            move: {
+              enable: true,
+              speed: 1.5,
+              direction: "right",
+              straight: true,
+              outModes: {
+                default: "out",
+                top: "bounce",
+                bottom: "bounce",
+              },
+            },
+            links: {
+              enable: true,
+              distance: 150,
+              color: "#4fc3f7",
+              opacity: 0.3,
+              width: 1,
+            },
+            rotate: {
+              value: 45,
+              random: true,
+              direction: "clockwise",
+              animation: {
+                enable: true,
+                speed: 5,
+                sync: false,
+              },
+            },
+            opacity: {
+              value: 0.7,
+              random: true,
+              animation: {
+                enable: true,
+                speed: 1,
+                minimumValue: 0.3,
+                sync: false,
+              },
+            },
+          },
+        }}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: -1
+        }}
+      />
 
-        <Grid container spacing={4}>
-          {services.map((service, index) => (
-            <Grid item xs={12} md={4} key={service.title}>
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={fadeIn}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-              >
-                <Card
-                  sx={{
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    borderRadius: 2,
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '4px',
-                      background: 'linear-gradient(90deg, #1a237e, #283593)'
-                    },
-                    '&:hover': {
-                      transform: 'translateY(-5px)',
-                      transition: 'transform 0.3s ease-in-out',
-                      boxShadow: '0 6px 30px rgba(0,0,0,0.12)'
-                    },
-                  }}
-                >
-                  <CardHeader
-                    title={service.title}
-                    titleTypographyProps={{
-                      align: 'center',
-                      variant: 'h5',
-                      fontWeight: 600,
-                      color: 'primary.main'
-                    }}
-                    sx={{ pb: 0 }}
-                  />
-                  <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                    <Typography
-                      variant="subtitle1"
-                      color="text.secondary"
-                      align="center"
-                      gutterBottom
-                      sx={{ mb: 3, lineHeight: 1.7 }}
-                    >
-                      {service.description}
-                    </Typography>
-                    <List>
-                      {service.features.map((feature) => (
-                        <ListItem key={feature} sx={{ py: 0.5 }}>
-                          <ListItemIcon sx={{ minWidth: 36 }}>
-                            <CheckCircleOutlineIcon color="primary" sx={{ fontSize: 20 }} />
-                          </ListItemIcon>
-                          <ListItemText
-                            primary={feature}
-                            primaryTypographyProps={{
-                              variant: 'body2',
-                              fontWeight: 500
-                            }}
-                          />
-                        </ListItem>
-                      ))}
-                    </List>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-
-        <Box sx={{ mt: 12 }}>
+      <Container sx={{ position: 'relative', zIndex: 1 }}>
+        <Box sx={{ py: 8 }}>
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
             transition={{ duration: 0.6 }}
           >
-            <Typography variant="h2" component="h2" gutterBottom textAlign="center" sx={{ fontWeight: 700 }}>
-              {t('services.successCases.title')}
-            </Typography>
-            <Typography
-              variant="h5"
-              textAlign="center"
-              color="text.secondary"
-              sx={{ mb: 8, maxWidth: '800px', mx: 'auto' }}
+            <Typography 
+              variant="h2" 
+              component="h1" 
+              gutterBottom 
+              textAlign="center" 
+              sx={{ 
+                fontWeight: 700,
+                color: '#8be9fd',
+                mb: 2,
+                fontSize: { xs: '2.5rem', md: '3.75rem' }
+              }}
             >
-              {t('services.successCases.subtitle')}
+              {t('services.title')}
+            </Typography>
+            <Typography 
+              variant="h5" 
+              textAlign="center" 
+              sx={{ 
+                mb: 6, 
+                maxWidth: '800px', 
+                mx: 'auto',
+                color: 'rgba(255, 255, 255, 0.9)',
+                fontSize: { xs: '1.2rem', md: '1.5rem' }
+              }}
+            >
+              {t('services.subtitle')}
             </Typography>
           </motion.div>
 
           <Grid container spacing={4}>
-            {successCases.map((caseStudy, index) => (
-              <Grid item xs={12} key={caseStudy.title}>
+            {services.map((service, index) => (
+              <Grid item xs={12} md={4} key={service.title}>
                 <motion.div
                   initial="hidden"
                   animate="visible"
                   variants={fadeIn}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
-                  <Card
+                  <Paper
+                    elevation={0}
                     sx={{
-                      background: 'linear-gradient(135deg, rgba(21,101,192,0.05) 0%, rgba(63,81,181,0.05) 100%)',
-                      borderRadius: 3,
-                      boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-                      overflow: 'hidden',
+                      height: '100%',
+                      p: 3,
+                      borderRadius: 2,
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      backdropFilter: 'blur(8px)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
                       position: 'relative',
+                      overflow: 'hidden',
+                      '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '4px',
+                        background: 'linear-gradient(90deg, #4fc3f7, #8be9fd)'
+                      },
                       '&:hover': {
-                        transform: 'translateY(-4px)',
+                        transform: 'translateY(-5px)',
                         transition: 'transform 0.3s ease-in-out',
-                        boxShadow: '0 12px 48px rgba(0,0,0,0.15)'
+                        boxShadow: '0 6px 30px rgba(0,0,0,0.2)'
                       },
                     }}
                   >
-                    <CardContent sx={{ p: 4 }}>
+                    <CardContent>
+                      <Typography
+                        variant="h5"
+                        component="h3"
+                        gutterBottom
+                        sx={{
+                          color: '#8be9fd',
+                          fontWeight: 600,
+                          textAlign: 'center'
+                        }}
+                      >
+                        {service.title}
+                      </Typography>
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          color: 'rgba(255, 255, 255, 0.9)',
+                          mb: 2,
+                          textAlign: 'center'
+                        }}
+                      >
+                        {service.description}
+                      </Typography>
+                      <List dense>
+                        {service.features.map((feature) => (
+                          <ListItem key={feature} sx={{ py: 0.5 }}>
+                            <ListItemIcon sx={{ minWidth: 36, color: '#4fc3f7' }}>
+                              <CheckCircleOutlineIcon />
+                            </ListItemIcon>
+                            <ListItemText
+                              primary={feature}
+                              primaryTypographyProps={{
+                                sx: { color: 'rgba(255, 255, 255, 0.9)' }
+                              }}
+                            />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </CardContent>
+                  </Paper>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+
+          <Box sx={{ mt: 10 }}>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+              transition={{ duration: 0.6 }}
+            >
+              <Typography
+                variant="h3"
+                component="h2"
+                gutterBottom
+                textAlign="center"
+                sx={{
+                  color: '#8be9fd',
+                  fontWeight: 700,
+                  mb: 6
+                }}
+              >
+                {t('services.successCases.title')}
+              </Typography>
+            </motion.div>
+
+            <Grid container spacing={4}>
+              {successCases.map((caseStudy, index) => (
+                <Grid item xs={12} key={caseStudy.title}>
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeIn}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                  >
+                    <Paper
+                      elevation={0}
+                      sx={{
+                        p: 4,
+                        borderRadius: 2,
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        backdropFilter: 'blur(8px)',
+                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+                        position: 'relative',
+                        overflow: 'hidden',
+                        '&::before': {
+                          content: '""',
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '4px',
+                          background: 'linear-gradient(90deg, #4fc3f7, #8be9fd)'
+                        }
+                      }}
+                    >
                       <Grid container spacing={3}>
                         <Grid item xs={12} md={8}>
-                          <Typography variant="h4" component="h3" gutterBottom color="primary.main" sx={{ fontWeight: 600 }}>
+                          <Typography
+                            variant="h4"
+                            component="h3"
+                            gutterBottom
+                            sx={{
+                              color: '#8be9fd',
+                              fontWeight: 600,
+                              mb: 2
+                            }}
+                          >
                             {caseStudy.title}
                           </Typography>
                           <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                            <BusinessIcon sx={{ mr: 1, color: 'text.secondary' }} />
-                            <Typography variant="subtitle1" color="text.secondary">
+                            <BusinessIcon sx={{ mr: 1, color: 'rgba(255, 255, 255, 0.7)' }} />
+                            <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.9)' }}>
                               {caseStudy.client}
                             </Typography>
                           </Box>
-
                           <Box sx={{ mb: 2 }}>
-                            <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 1 }}>
-                              <ErrorOutlineIcon sx={{ mr: 1, mt: 0.5, color: 'warning.main' }} />
-                              <Typography variant="body1">
-                                <strong>{t('Challenge')}:</strong> {caseStudy.challenge}
+                            <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
+                              <ErrorOutlineIcon sx={{ mr: 1, mt: 0.5, color: '#ffa726' }} />
+                              <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+                                <Box component="span" sx={{ fontWeight: 600, color: '#8be9fd' }}>
+                                  {t('Challenge')}:
+                                </Box> {caseStudy.challenge}
                               </Typography>
                             </Box>
-                            <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 1 }}>
-                              <LightbulbOutlinedIcon sx={{ mr: 1, mt: 0.5, color: 'success.main' }} />
-                              <Typography variant="body1">
-                                <strong>{t('Solution')}:</strong> {caseStudy.solution}
+                            <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                              <LightbulbOutlinedIcon sx={{ mr: 1, mt: 0.5, color: '#66bb6a' }} />
+                              <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.9)' }}>
+                                <Box component="span" sx={{ fontWeight: 600, color: '#8be9fd' }}>
+                                  {t('Solution')}:
+                                </Box> {caseStudy.solution}
                               </Typography>
                             </Box>
                           </Box>
@@ -276,38 +403,59 @@ const Services = () => {
 
                         <Grid item xs={12} md={4}>
                           <Box sx={{ mb: 3 }}>
-                            <Typography variant="h6" gutterBottom sx={{ display: 'flex', alignItems: 'center' }}>
-                              <DoneAllIcon sx={{ mr: 1, color: 'success.main' }} />
+                            <Typography
+                              variant="h6"
+                              gutterBottom
+                              sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                color: '#8be9fd',
+                                mb: 2
+                              }}
+                            >
+                              <DoneAllIcon sx={{ mr: 1, color: '#66bb6a' }} />
                               {t('Key Results')}
                             </Typography>
                             <List dense>
-                              {caseStudy.results.map((result: string) => (
+                              {caseStudy.results.map((result) => (
                                 <ListItem key={result} sx={{ py: 0.5 }}>
-                                  <ListItemIcon sx={{ minWidth: 36 }}>
-                                    <CheckCircleOutlineIcon color="primary" sx={{ fontSize: 20 }} />
+                                  <ListItemIcon sx={{ minWidth: 36, color: '#4fc3f7' }}>
+                                    <CheckCircleOutlineIcon />
                                   </ListItemIcon>
-                                  <ListItemText primary={result} />
+                                  <ListItemText
+                                    primary={result}
+                                    primaryTypographyProps={{
+                                      sx: { color: 'rgba(255, 255, 255, 0.9)' }
+                                    }}
+                                  />
                                 </ListItem>
                               ))}
                             </List>
                           </Box>
 
-                          <Divider sx={{ mb: 2 }} />
+                          <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.2)', mb: 2 }} />
 
                           <Box>
-                            <Typography variant="subtitle2" gutterBottom color="text.secondary">
+                            <Typography
+                              variant="subtitle1"
+                              gutterBottom
+                              sx={{ color: 'rgba(255, 255, 255, 0.7)', mb: 1.5 }}
+                            >
                               {t('Technologies Used')}:
                             </Typography>
                             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-                              {caseStudy.technologies.map((tech: string) => (
+                              {caseStudy.technologies.map((tech) => (
                                 <Chip
                                   key={tech}
                                   label={tech}
                                   size="small"
                                   sx={{
-                                    background: 'linear-gradient(135deg, #1a237e 0%, #283593 100%)',
-                                    color: 'white',
-                                    '&:hover': { opacity: 0.9 }
+                                    background: 'rgba(79, 195, 247, 0.15)',
+                                    color: '#8be9fd',
+                                    border: '1px solid rgba(139, 233, 253, 0.3)',
+                                    '&:hover': {
+                                      background: 'rgba(79, 195, 247, 0.25)'
+                                    }
                                   }}
                                 />
                               ))}
@@ -315,15 +463,15 @@ const Services = () => {
                           </Box>
                         </Grid>
                       </Grid>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
+                    </Paper>
+                  </motion.div>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 
