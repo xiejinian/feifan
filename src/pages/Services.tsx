@@ -220,7 +220,7 @@ const Services = () => {
                 fontSize: { xs: '1.2rem', md: '1.5rem' }
               }}
             >
-              {t('services.subtitle')}
+              {t('services.description')}
             </Typography>
           </motion.div>
 

@@ -35,14 +35,16 @@
         "title": "Support",
         "description": "24/7 dedicated customer support"
       }
-    }
+    },
+    "mainSlogan": "Transforming Possibilities Through Intelligent Technology",
+    "subSlogan": "Where AI meets innovation to solve tomorrow's challenges today"
   },
   "about": {
-    "title": "About Us",
-    "subtitle": "Our Journey of Innovation",
+    "title": "Our Vision & Expertise",
+    "description": "We are pioneers at the intersection of artificial intelligence and enterprise solutions, delivering transformative technologies that redefine what's possible.",
     "mission": {
       "title": "Our Mission",
-      "description": "To provide innovative technology solutions that empower businesses and individuals to achieve their full potential."
+      "description": "Our mission is to harness the power of intelligent technology to create unprecedented value, empowering businesses to achieve what was once thought impossible."
     },
     "vision": {
       "title": "Our Vision",
@@ -62,6 +64,7 @@
   },
   "services": {
     "title": "Our Services",
+    "description": "We engineer intelligent ecosystems where AI, cloud infrastructure, and human expertise converge to create solutions that don't just solve problems—they eliminate limitations.",
     "subtitle": "Comprehensive Solutions for Your Business",
     "solutions": {
       "development": {

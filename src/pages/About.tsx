@@ -131,7 +131,7 @@ const About = () => {
                 fontSize: { xs: '1.2rem', md: '1.5rem' }
               }}
             >
-              {t('about.subtitle')}
+              {t('about.description')}
             </Typography>
           </motion.div>
 

@@ -132,7 +132,7 @@ const Home = () => {
                 mb: 3
               }}
             >
-              {t('home.hero.title')}
+              {t('home.mainSlogan')}
             </Typography>
             <Typography
               textAlign="center"
@@ -144,7 +144,7 @@ const Home = () => {
                 mx: 'auto'
               }}
             >
-              {t('home.hero.subtitle')}
+              {t('home.subSlogan')}
             </Typography>
             <Box sx={{ 
               textAlign: 'center',
