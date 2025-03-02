@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { } from 'react';
 import { Container, Typography, Box, Grid, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -29,12 +29,12 @@ const About = () => {
             variants={fadeIn}
             transition={{ duration: 0.6 }}
           >
-            <Typography 
-              variant="h2" 
-              component="h1" 
-              gutterBottom 
-              textAlign="center" 
-              sx={{ 
+            <Typography
+              variant="h2"
+              component="h1"
+              gutterBottom
+              textAlign="center"
+              sx={{
                 fontWeight: 700,
                 color: '#8be9fd',
                 mb: 2,
@@ -43,12 +43,12 @@ const About = () => {
             >
               {t('about.title')}
             </Typography>
-            <Typography 
-              variant="h5" 
-              textAlign="center" 
-              sx={{ 
-                mb: 6, 
-                maxWidth: '800px', 
+            <Typography
+              variant="h5"
+              textAlign="center"
+              sx={{
+                mb: 6,
+                maxWidth: '800px',
                 mx: 'auto',
                 color: 'rgba(255, 255, 255, 0.9)',
                 fontSize: { xs: '1.2rem', md: '1.5rem' }
@@ -99,8 +99,8 @@ const About = () => {
                   <Typography variant="h4" gutterBottom sx={{ color: '#8be9fd', fontWeight: 600 }}>
                     {t('about.mission.title')}
                   </Typography>
-                  <Typography paragraph sx={{ 
-                    color: 'rgba(255, 255, 255, 0.9)', 
+                  <Typography paragraph sx={{
+                    color: 'rgba(255, 255, 255, 0.9)',
                     lineHeight: 1.7,
                     maxWidth: '600px',
                     mx: 'auto'
