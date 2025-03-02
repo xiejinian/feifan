@@ -2,9 +2,7 @@ import React, { useCallback } from 'react';
 import { Container, Typography, Box, Grid, Paper } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import Particles from "react-tsparticles";
-import { Engine } from "tsparticles-engine";
-import { loadSlim } from "tsparticles-slim";
+import AppleBackground from '../components/AppleBackground';
 
 const About = () => {
   const { t } = useTranslation();
@@ -19,84 +17,9 @@ const About = () => {
     t('about.values.integrity') + "  " + t('about.values.collaboration')
   ];
 
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
-  }, []);
-
   return (
     <Box sx={{ position: 'relative', minHeight: '100vh' }}>
-      <Particles
-        id="tsparticles-about"
-        init={particlesInit}
-        options={{
-          background: {
-            color: {
-              value: "#1a237e",
-            },
-          },
-          particles: {
-            number: {
-              value: 60,
-              density: {
-                enable: true,
-                area: 800,
-              },
-            },
-            color: {
-              value: ["#4fc3f7", "#8be9fd"],
-            },
-            shape: {
-              type: ["circle", "triangle", "polygon"], // 多种形状
-            },
-            opacity: {
-              value: 0.6,
-              random: true,
-            },
-            size: {
-              value: { min: 1, max: 3 },
-              random: true,
-            },
-            move: {
-              enable: true,
-              speed: 1.5,
-              direction: "none",
-              random: true,
-              straight: false,
-              outModes: "out",
-              attract: {
-                enable: true,
-                rotateX: 600,
-                rotateY: 1200,
-              },
-            },
-            links: {
-              enable: true,
-              distance: 150,
-              color: "#4fc3f7",
-              opacity: 0.3,
-              width: 1,
-            },
-            rotate: {
-              value: 0,
-              random: true,
-              direction: "clockwise",
-              animation: {
-                enable: true,
-                speed: 5,
-                sync: false,
-              },
-            },
-          },
-        }}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -1
-        }}
-      />
+      <AppleBackground variant="secondary" />
 
       <Container sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ py: 8 }}>

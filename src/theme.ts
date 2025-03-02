@@ -2,78 +2,90 @@ import { createTheme, ThemeOptions } from '@mui/material/styles';
 import { PaletteMode } from '@mui/material';
 
 const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
+  shape: {
+    borderRadius: 12
+  },
   palette: {
     mode,
     ...(mode === 'light'
       ? {
         // Light mode
         primary: {
-          main: '#2196f3',
-          light: '#4dabf5',
-          dark: '#1769aa',
+          main: '#007AFF',
+          light: '#5856D6',
+          dark: '#0055FF',
         },
         secondary: {
-          main: '#19857b',
-          light: '#4fb3aa',
-          dark: '#115c55',
+          main: '#34C759',
+          light: '#30D158',
+          dark: '#248A3D',
         },
         background: {
-          default: '#ffffff',
-          paper: '#f5f5f5',
+          default: '#F5F5F7',
+          paper: '#FFFFFF',
         },
         text: {
-          primary: 'rgba(0, 0, 0, 0.87)',
-          secondary: 'rgba(0, 0, 0, 0.6)',
+          primary: '#1D1D1F',
+          secondary: '#86868B',
         },
       }
       : {
         // Dark mode
         primary: {
-          main: '#90caf9',
-          light: '#e3f2fd',
-          dark: '#42a5f5',
+          main: '#0A84FF',
+          light: '#5E5CE6',
+          dark: '#0066CC',
         },
         secondary: {
-          main: '#4db6ac',
-          light: '#b2dfdb',
-          dark: '#00897b',
+          main: '#30D158',
+          light: '#32D74B',
+          dark: '#28B13B',
         },
         background: {
-          default: '#121212',
-          paper: '#1e1e1e',
+          default: '#000000',
+          paper: '#1C1C1E',
         },
         text: {
-          primary: '#ffffff',
-          secondary: 'rgba(255, 255, 255, 0.7)',
+          primary: '#F5F5F7',
+          secondary: '#86868B',
         },
       }),
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"-apple-system", "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
     h1: {
       fontSize: '2.5rem',
-      fontWeight: 600,
+      fontWeight: 700,
+      letterSpacing: '-0.015em',
     },
     h2: {
       fontSize: '2rem',
-      fontWeight: 500,
+      fontWeight: 600,
+      letterSpacing: '-0.01em',
     },
     h3: {
       fontSize: '1.75rem',
-      fontWeight: 500,
+      fontWeight: 600,
+      letterSpacing: '-0.01em',
     },
     body1: {
-      fontSize: '1rem',
-      lineHeight: 1.7,
+      fontSize: '1.0625rem',
+      lineHeight: 1.5,
+      letterSpacing: '-0.01em',
     },
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 8,
+          borderRadius: 12,
           textTransform: 'none',
           padding: '8px 24px',
+          fontWeight: 600,
+          transition: 'all 0.2s ease-in-out',
+          '&:hover': {
+            transform: 'scale(1.02)',
+          },
         },
       },
     },
@@ -81,6 +93,8 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
       styleOverrides: {
         root: {
           backgroundImage: 'none',
+          borderRadius: 16,
+          transition: 'all 0.3s ease-in-out',
         },
       },
     },

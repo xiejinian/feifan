@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   Typography,
@@ -14,9 +14,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 import { useTranslation } from 'react-i18next';
-import Particles from "react-tsparticles";
-import { Engine } from "tsparticles-engine";
-import { loadSlim } from "tsparticles-slim";
+import AppleBackground from '../components/AppleBackground';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -34,9 +32,6 @@ const Contact = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,64 +95,7 @@ const Contact = () => {
 
   return (
     <Box sx={{ position: 'relative', minHeight: '100vh' }}>
-      <Particles
-        id="tsparticles-contact"
-        init={particlesInit}
-        options={{
-          background: {
-            color: {
-              value: "#1a237e",
-            },
-          },
-          particles: {
-            color: {
-              value: ["#ffffff", "#4fc3f7", "#8be9fd"],
-            },
-            move: {
-              direction: "none",
-              enable: true,
-              outModes: {
-                default: "bounce",
-              },
-              random: true,
-              speed: 1,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                area: 800,
-              },
-              value: 40,
-            },
-            opacity: {
-              value: 0.5,
-            },
-            shape: {
-              type: ["circle", "star"],
-            },
-            size: {
-              value: { min: 1, max: 3 },
-            },
-            links: {
-              enable: true,
-              distance: 150,
-              color: "#4fc3f7",
-              opacity: 0.3,
-              width: 1,
-            },
-          },
-        }}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -1
-        }}
-      />
-
+      <AppleBackground variant="secondary" />
       <Container sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ py: 8 }}>
           <motion.div
@@ -166,12 +104,12 @@ const Contact = () => {
             variants={fadeIn}
             transition={{ duration: 0.6 }}
           >
-            <Typography 
-              variant="h2" 
-              component="h1" 
-              gutterBottom 
-              textAlign="center" 
-              sx={{ 
+            <Typography
+              variant="h2"
+              component="h1"
+              gutterBottom
+              textAlign="center"
+              sx={{
                 fontWeight: 700,
                 color: '#8be9fd',
                 mb: 2,
@@ -180,12 +118,12 @@ const Contact = () => {
             >
               {t('contact.title')}
             </Typography>
-            <Typography 
-              variant="h5" 
-              textAlign="center" 
-              sx={{ 
-                mb: 6, 
-                maxWidth: '800px', 
+            <Typography
+              variant="h5"
+              textAlign="center"
+              sx={{
+                mb: 6,
+                maxWidth: '800px',
                 mx: 'auto',
                 color: 'rgba(255, 255, 255, 0.9)',
                 fontSize: { xs: '1.2rem', md: '1.5rem' }
@@ -236,7 +174,7 @@ const Contact = () => {
                         {info.icon}
                       </Box>
                       <Box>
-                        <Typography variant="h6" gutterBottom sx={{ 
+                        <Typography variant="h6" gutterBottom sx={{
                           fontWeight: 600,
                           color: '#8be9fd'
                         }}>
@@ -461,9 +399,9 @@ const Contact = () => {
                   </form>
 
                   {formStatus === 'success' && (
-                    <Alert 
-                      severity="success" 
-                      sx={{ 
+                    <Alert
+                      severity="success"
+                      sx={{
                         mt: 2,
                         backgroundColor: 'rgba(46, 125, 50, 0.1)',
                         color: '#81c784',
@@ -476,9 +414,9 @@ const Contact = () => {
                     </Alert>
                   )}
                   {formStatus === 'error' && (
-                    <Alert 
-                      severity="error" 
-                      sx={{ 
+                    <Alert
+                      severity="error"
+                      sx={{
                         mt: 2,
                         backgroundColor: 'rgba(211, 47, 47, 0.1)',
                         color: '#e57373',

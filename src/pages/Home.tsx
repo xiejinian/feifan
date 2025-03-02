@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { Box, Container, Typography, Button, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import CodeIcon from '@mui/icons-material/Code';
@@ -6,19 +6,17 @@ import BusinessIcon from '@mui/icons-material/Business';
 import SupportIcon from '@mui/icons-material/Support';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import Particles from "react-tsparticles";
-import { Engine } from "tsparticles-engine";
-import { loadSlim } from "tsparticles-slim";
+import AppleBackground from '../components/AppleBackground';
+
 
 const Home = () => {
   const { t } = useTranslation();
 
+
   const fadeIn = {
-    initial: { opacity: 0, x: -100 },
-    animate: { opacity: 1, x: 0 },
-    transition: { duration: 0.5, ease: 'easeInOut' },
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: 'easeInOut' }
   };
 
   const features = [
@@ -39,71 +37,10 @@ const Home = () => {
     },
   ];
 
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
-  }, []);
-
   return (
     <Box sx={{ position: 'relative' }}>
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          background: {
-            color: {
-              value: "#1a237e",
-            },
-          },
-          fpsLimit: 120,
-          particles: {
-            color: {
-              value: ["#ffffff", "#4fc3f7", "#8be9fd"],
-            },
-            links: {
-              color: "#ffffff",
-              distance: 150,
-              enable: true,
-              opacity: 0.3,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              outModes: {
-                default: "bounce",
-              },
-              random: false,
-              speed: 2,
-              straight: false,
-            },
-            number: {
-              density: {
-                enable: true,
-                area: 800,
-              },
-              value: 80,
-            },
-            opacity: {
-              value: 0.5,
-            },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              value: { min: 1, max: 5 },
-            },
-          },
-          detectRetina: true,
-        }}
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -1
-        }}
-      />
-      
+      <AppleBackground variant="primary" />
+
       <Box sx={{ position: 'relative', zIndex: 1 }}>
         {/* Hero Section */}
         <Box
@@ -146,7 +83,7 @@ const Home = () => {
             >
               {t('home.subSlogan')}
             </Typography>
-            <Box sx={{ 
+            <Box sx={{
               textAlign: 'center',
               mt: 4
             }}>
@@ -176,7 +113,7 @@ const Home = () => {
         </Box>
 
         {/* Features Section */}
-        <Container sx={{ 
+        <Container sx={{
           py: { xs: 8, md: 12 },
           backgroundColor: 'rgba(255, 255, 255, 0.1)',
           backdropFilter: 'blur(10px)',

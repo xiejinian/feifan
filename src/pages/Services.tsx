@@ -1,4 +1,3 @@
-import React, { useCallback } from 'react';
 import {
   Container,
   Typography,
@@ -20,9 +19,7 @@ import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import { useTranslation } from 'react-i18next';
-import Particles from "react-tsparticles";
-import { Engine } from "tsparticles-engine";
-import { loadSlim } from "tsparticles-slim";
+import AppleBackground from '../components/AppleBackground';
 
 
 interface SuccessCase {
@@ -105,87 +102,11 @@ const Services = () => {
     },
   ];
 
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
-  }, []);
+
 
   return (
     <Box sx={{ position: 'relative', minHeight: '100vh' }}>
-      <Particles
-        id="tsparticles-services"
-        init={particlesInit}
-        options={{
-          background: {
-            color: {
-              value: "#1a237e",
-            },
-          },
-          particles: {
-            number: {
-              value: 50,
-              density: {
-                enable: true,
-                area: 800,
-              },
-            },
-            color: {
-              value: ["#ffffff", "#4fc3f7", "#8be9fd"],
-            },
-            shape: {
-              type: ["circle", "square"],
-            },
-            size: {
-              value: { min: 2, max: 4 },
-            },
-            move: {
-              enable: true,
-              speed: 1.5,
-              direction: "right",
-              straight: true,
-              outModes: {
-                default: "out",
-                top: "bounce",
-                bottom: "bounce",
-              },
-            },
-            links: {
-              enable: true,
-              distance: 150,
-              color: "#4fc3f7",
-              opacity: 0.3,
-              width: 1,
-            },
-            rotate: {
-              value: 45,
-              random: true,
-              direction: "clockwise",
-              animation: {
-                enable: true,
-                speed: 5,
-                sync: false,
-              },
-            },
-            opacity: {
-              value: 0.7,
-              random: true,
-              animation: {
-                enable: true,
-                speed: 1,
-                minimumValue: 0.3,
-                sync: false,
-              },
-            },
-          },
-        }}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -1
-        }}
-      />
+      <AppleBackground variant="tertiary" />
 
       <Container sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ py: 8 }}>
@@ -195,12 +116,12 @@ const Services = () => {
             variants={fadeIn}
             transition={{ duration: 0.6 }}
           >
-            <Typography 
-              variant="h2" 
-              component="h1" 
-              gutterBottom 
-              textAlign="center" 
-              sx={{ 
+            <Typography
+              variant="h2"
+              component="h1"
+              gutterBottom
+              textAlign="center"
+              sx={{
                 fontWeight: 700,
                 color: '#8be9fd',
                 mb: 2,
@@ -209,12 +130,12 @@ const Services = () => {
             >
               {t('services.title')}
             </Typography>
-            <Typography 
-              variant="h5" 
-              textAlign="center" 
-              sx={{ 
-                mb: 6, 
-                maxWidth: '800px', 
+            <Typography
+              variant="h5"
+              textAlign="center"
+              sx={{
+                mb: 6,
+                maxWidth: '800px',
                 mx: 'auto',
                 color: 'rgba(255, 255, 255, 0.9)',
                 fontSize: { xs: '1.2rem', md: '1.5rem' }
