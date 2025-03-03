@@ -20,6 +20,7 @@ import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import { useTranslation } from 'react-i18next';
 import AppleBackground from '../components/AppleBackground';
+import ProductShowcase from '../components/ProductShowcase';
 
 
 interface SuccessCase {
@@ -226,6 +227,10 @@ const Services = () => {
               </Grid>
             ))}
           </Grid>
+
+          <Box sx={{ mt: 10, mb: 10 }}>
+            <ProductShowcase />
+          </Box>
 
           <Box sx={{ mt: 10 }}>
             <motion.div

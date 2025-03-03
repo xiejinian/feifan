@@ -89,14 +89,14 @@
       "subtitle": "Real Results, Real Impact",
       "cases": {
         "case1": {
-          "title": "Global E-commerce Platform Transformation",
-          "client": "Leading Retail Corporation",
-          "challenge": "Modernizing legacy systems and scaling for global operations",
-          "solution": "Implemented microservices architecture with cloud-native solutions",
+          "title": "WeChat E-commerce Platform",
+          "client": "Startup Online Retail Enterprise",
+          "challenge": "Rapid Launch to Capture Business Opportunities",
+          "solution": "Implementation of Cloud-Native Microservices Architecture Solution",
           "results": [
-            "300% increase in transaction processing speed",
-            "99.99% system uptime",
-            "50% reduction in operational costs"
+            "Completed 10% ahead of schedule",
+            "99.99% system availability",
+            "50% lower operational costs than expected"
           ],
           "technologies": [
             "Kubernetes",
@@ -106,37 +106,147 @@
           ]
         },
         "case2": {
-          "title": "Smart City Infrastructure Management",
-          "client": "Metropolitan Government",
-          "challenge": "Inefficient urban resource management and monitoring",
-          "solution": "Developed IoT-based smart monitoring system with real-time analytics",
+          "title": "Gamified E-commerce Platform",
+          "client": "Large Listed E-commerce Company",
+          "challenge": "Rapid High-Quality Launch",
+          "solution": "Python and AI-based Gamified Task Solution",
           "results": [
-            "40% reduction in energy consumption",
-            "Real-time incident response",
-            "Improved citizen satisfaction"
+            "Completed on schedule",
+            "99.99% system availability",
+            "30% lower business implementation costs than expected"
           ],
           "technologies": [
-            "IoT",
+            "Kubernetes",
             "Big Data",
             "AI Analytics",
+            "Microservices",
             "Cloud Platform"
           ]
         },
         "case3": {
-          "title": "FinTech Security Enhancement",
-          "client": "International Banking Institution",
-          "challenge": "Increasing cyber threats and regulatory compliance needs",
-          "solution": "Implemented advanced security system with AI-powered threat detection",
+          "title": "AI Customer Service System for Telecommunications",
+          "client": "Major Chinese Mobile Communication Companies",
+          "challenge": "Growing Demand for Intelligence",
+          "solution": "Implementation of Intelligent Customer Service System with AI Capabilities",
           "results": [
-            "Zero security breaches",
-            "90% faster threat detection",
-            "100% compliance achievement"
+            "98.4% self-resolution rate and answer accuracy",
+            "Meeting the needs of customer service and operations scenarios",
+            "Unified user interface for customer platform"
           ],
           "technologies": [
-            "AI Security",
-            "Blockchain",
-            "Cloud Security",
-            "Biometrics"
+            "Large Models",
+            "AI Agent",
+            "AI Security"
+          ]
+        }
+      }
+    },
+    "products": {
+      "title": "Our Products",
+      "subtitle": "Innovative solutions designed for the future",
+      "categories": {
+        "ecommerce": {
+          "title": "E-commerce Platforms",
+          "description": "Next-generation commerce solutions that transform online retail experiences",
+          "items": [
+            {
+              "name": "NexShop",
+              "tagline": "Seamless Omnichannel Retail",
+              "description": "An integrated e-commerce platform with AI-powered personalization, real-time inventory management, and seamless omnichannel capabilities.",
+              "features": [
+                "AI Personalization",
+                "Omnichannel Integration",
+                "Real-time Analytics"
+              ]
+            },
+            {
+              "name": "PayFlow",
+              "tagline": "Frictionless Payment Solutions",
+              "description": "A secure, fast payment processing system with multi-currency support, fraud detection, and seamless integration with major payment methods.",
+              "features": [
+                "Fraud Protection",
+                "Multi-currency Support",
+                "One-click Checkout"
+              ]
+            }
+          ]
+        },
+        "aiPlatform": {
+          "title": "AI Middleware",
+          "description": "Intelligent platforms that power decision-making and automation",
+          "items": [
+            {
+              "name": "InsightCore",
+              "tagline": "Enterprise Intelligence Engine",
+              "description": "A comprehensive AI middleware that processes and analyzes vast amounts of data to deliver actionable business insights.",
+              "features": [
+                "Predictive Analytics",
+                "Natural Language Processing",
+                "Computer Vision"
+              ]
+            },
+            {
+              "name": "NeuralOps",
+              "tagline": "AI Operations Platform",
+              "description": "An end-to-end platform for deploying, monitoring, and managing AI models at scale with built-in governance.",
+              "features": [
+                "Model Governance",
+                "Automated ML Ops",
+                "Real-time Monitoring"
+              ]
+            }
+          ]
+        },
+        "enterprise": {
+          "title": "Enterprise Service Platforms",
+          "description": "Comprehensive business solutions that streamline operations",
+          "items": [
+            {
+              "name": "WorkSphere",
+              "tagline": "Unified Workplace Platform",
+              "description": "A comprehensive enterprise service platform that integrates communication, project management, and resource planning.",
+              "features": [
+                "Team Collaboration",
+                "Resource Management",
+                "Process Automation"
+              ]
+            },
+            {
+              "name": "SecureVault",
+              "tagline": "Enterprise Security Solution",
+              "description": "A robust security platform providing end-to-end protection for enterprise data and infrastructure.",
+              "features": [
+                "Zero Trust Architecture",
+                "Threat Intelligence",
+                "Compliance Management"
+              ]
+            }
+          ]
+        },
+        "hardware": {
+          "title": "Smart Hardware",
+          "description": "Cutting-edge devices that bridge the digital and physical worlds",
+          "items": [
+            {
+              "name": "SmartHub",
+              "tagline": "Intelligent Control Center",
+              "description": "A sleek, powerful hub that connects and controls all smart devices in your environment.",
+              "features": [
+                "Voice Control",
+                "Multi-device Integration",
+                "Energy Management"
+              ]
+            },
+            {
+              "name": "QuantumSense",
+              "tagline": "Next-gen Sensor Array",
+              "description": "Ultra-precise environmental and biometric sensors for healthcare and industrial applications.",
+              "features": [
+                "Nano-precision",
+                "Low Power Consumption",
+                "Wireless Connectivity"
+              ]
+            }
           ]
         }
       }
